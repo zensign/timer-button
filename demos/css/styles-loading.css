@@ -1,0 +1,158 @@
+body, html
+{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	background: #484860;
+	color: #f5f3ec;
+	font-family: 'Roboto', 'Arial', 'Sans Serif';
+	text-align:center;
+}
+
+h1
+{
+	padding:40px 0;
+	margin:0 auto;
+	font-size:3em;
+	font-weight: 400;
+	letter-spacing: -.02em;
+}
+
+#image-container
+{
+	position: relative;
+	width:100%;
+	max-width:1050px;
+	height:0;
+	opacity:0;
+	margin:0 auto;
+	border:solid 5px #F5F3F2;
+	border-radius:2px;
+	background:#40475B;
+	overflow:hidden;
+	box-sizing: border-box;
+}
+
+#image-container.show
+{
+	height:550px;
+	opacity:1;
+
+	-webkit-transition: height 1s ease-out .1s;
+    -moz-transition: height 1s ease-out .1s;
+    -o-transition: height 1s ease-out .1s;
+    transition: height 1s ease-out .1s;
+}
+
+#image-container img
+{
+	width:100%;
+	height:auto;
+}
+
+#photos
+{
+	width:100%;
+	max-width:1080px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.photo
+{
+
+	width:31.333%;
+	height:200px;
+	float:left;
+	margin:1%;
+	border:solid 5px #F5F3F2;
+	border-radius:2px;
+	cursor:pointer;
+
+	box-sizing: border-box;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.photo:hover
+{
+	-webkit-transition: border .1s ease-in-out;
+    -moz-transition: border .1s ease-in-out;
+    -o-transition: border .1s ease-in-out;
+    transition: border .1s ease-in-out;
+}
+
+.photo div
+{
+	margin:25px auto;
+}
+
+#photo1
+{
+	background-image:url('../images/photo1-thumb.jpg');
+}
+
+#photo2
+{
+	background-image:url('../images/photo2-thumb.jpg');
+}
+
+#photo3
+{
+	background-image:url('../images/photo3-thumb.jpg');
+}
+
+#photo4
+{
+	background-image:url('../images/photo4-thumb.jpg');
+}
+
+#photo5
+{
+	background-image:url('../images/photo5-thumb.jpg');
+}
+
+#photo6
+{
+	background-image:url('../images/photo6-thumb.jpg');
+}
+
+@media (max-width: 760px) {
+	.photo
+	{
+		width:44%;
+		margin:1% 0 1% 4%;
+	}
+
+	#image-container
+	{
+		width:88%;
+	}
+
+	#image-container.show
+	{
+		height:auto;
+	}
+}
+
+@media (max-width: 400px) {
+	.photo
+	{
+		width:98%;
+		height:160px;
+		margin:1%;
+	}
+
+	.photo div
+	{
+		margin: 5px auto;
+	}
+
+	#image-container
+	{
+		width:98%;
+	}
+}

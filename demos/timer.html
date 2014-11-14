@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Tap and Hold Timer Button</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/styles-timer.css">
+
+    <script src="../src/timer-button.js"></script>
+
+    <script type="text/javascript">
+        var hoverTimerButton = null;
+
+        function createTimerButton()
+        {
+            // Create new timer button
+            timerButton = new TimerButton('hover-btn', 'hold', 300, 20, 'rgba(255,255,255,.8)', 'rgba(255,255,255,.8)', 'Start Mission', 34, 'black', 'Roboto', 3000, playOutro);
+
+            // Start intro css transitions
+            document.getElementById('wrapper').className = 'intro';
+        }
+
+        // Timer Button callback functiokn
+        function playOutro()
+        {
+            // Start outro css transitions
+            document.getElementById('wrapper').className = 'intro outro';
+        }
+    </script>
+</head>
+<body onload="createTimerButton()" id="wrapper">
+    <div id="moon"></div>
+    <div id="hover-btn"></div>
+    <div id="ships"></div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body, html
+{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	background:#000;
+}
+
+#hover-btn
+{
+	position:absolute;
+	left:50%;
+	top:40%;
+	margin:-150px 0 0 -150px;
+
+	opacity:0;
+	z-index:2;
+}
+
+.intro #hover-btn
+{
+	opacity:1;
+	top:50%;
+
+	-webkit-transition: all 1.2s ease-in-out;
+    -moz-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
+    transition: all 1.2s ease-in-out;
+}
+
+.intro.outro #hover-btn
+{
+	opacity:0;
+	top:80%;
+
+	-webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
+
+#moon
+{
+	background:#000 url('../images/bg.png') no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	position: absolute;
+	width:120%;
+	height:120%;
+	margin-left:-10%;
+	z-index:1;
+
+	opacity:0;
+}
+
+.intro #moon
+{
+	opacity:1;
+
+	width:100%;
+	height:100%;
+	margin-left:0%;
+
+	-webkit-transition: all 1.2s ease-out;
+    -moz-transition: all 1.2s ease-out;
+    -o-transition: all 1.2s ease-out;
+    transition: all 1.2s ease-out;
+}
+
+.intro.outro #moon
+{
+	opacity:0;
+
+	width:120%;
+	height:120%;
+	margin-left:-10%;
+
+	-webkit-transition: all .8s ease-out;
+    -moz-transition: all .8s ease-out;
+    -o-transition: all .8s ease-out;
+    transition: all .8s ease-out;
+}
+
+#ships
+{
+	position: absolute;
+	width:200%;
+	height:100%;
+	margin-left:-100%;
+	background:#000 url('../images/ships.jpg') no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	opacity:0;
+	visibility: hidden;
+	z-index:3;
+}
+
+.outro #ships
+{
+	opacity:1;
+	width:100%;
+	height:100%;
+	margin-left:0%;
+
+	visibility: visible;
+
+	-webkit-transition: all 1s ease-in-out .85s;
+    -moz-transition: all 1s ease-in-out .85s;
+    -o-transition: all 1s ease-in-out .85s;
+    transition: all 1s ease-in-out .85s;
+}
