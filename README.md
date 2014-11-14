@@ -32,10 +32,10 @@ var hoverTimerButton = new HoverTimerButton('some-element-id',
                                             20, 
                                             'rgba(255,255,255,.8)', 
                                             'rgba(255,255,255,.8)', 
-                                            'Start Mission', 
+                                            'My Button Label', 
                                             34, 
                                             'black', 
                                             'Roboto', 
                                             3000, 
-                                            playOutro ).init();
+                                            myCallbackFunction );
 ```

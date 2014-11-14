@@ -48,9 +48,7 @@ function TimerButton(elementId, interactionType, size, strokeWidth, strokeColor,
         var container = document.getElementById(this.elementId);
         var styles = 'width: '+this.size+'px; height: '+this.size+'px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; outline: none;';
         container.setAttribute('style', styles);
-
         container.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="'+this.size+'" height="'+this.size+'"><defs><mask id="timer-button-circle-cutout"><rect width="100%" height="100%" fill="white"/><circle r="'+(this.radius-this.strokeWidth)+'" cx="'+this.center+'" cy="'+this.center+'" /></mask></defs><path id="timer-button-pie" d="" fill="'+this.strokeColor+'" mask="url(\'#timer-button-circle-cutout\')" /><circle r="'+(this.radius-(this.strokeWidth*1.25))+'" cx="'+this.center+'" cy="'+this.center+'" fill="'+this.centerColor+'" /><text x="'+this.center+'" y="'+(this.center+(this.fontSize*.5))+'" font-family="'+this.fontFamily+'" font-size="'+this.fontSize+'" fill="'+this.fontColor+'" font-weight="bold" text-anchor="middle" id="timer-button-label">'+label+'</text></svg>';
-
         container.onselectstart = function(){ return false; };
 
         if(this.interactionType == 'hover')
@@ -207,7 +205,6 @@ function TimerButton(elementId, interactionType, size, strokeWidth, strokeColor,
     this.resetDisplay = function()
     {
         document.getElementById(this.elementId).childNodes[0].childNodes[1].setAttribute('d','');
-
         document.getElementById(this.elementId).childNodes[0].childNodes[3].textContent = this.label;
     },
 
@@ -219,9 +216,9 @@ function TimerButton(elementId, interactionType, size, strokeWidth, strokeColor,
         this.updateDisplay();
     },
 
-    this.addEvent = function( obj, type, fn )
+    this.addEvent = function(obj, type, fn)
     {
-        if ( obj.attachEvent )
+        if (obj.attachEvent)
         {
             obj['e'+type+fn] = fn;
             obj[type+fn] = function(){obj['e'+type+fn]( window.event );}
@@ -230,9 +227,9 @@ function TimerButton(elementId, interactionType, size, strokeWidth, strokeColor,
             obj.addEventListener( type, fn, false );
     },
 
-    this.removeEvent = function( obj, type, fn )
+    this.removeEvent = function(obj, type, fn)
     {
-        if ( obj.detachEvent )
+        if(obj.detachEvent)
         {
             obj.detachEvent( 'on'+type, obj[type+fn] );
             obj[type+fn] = null;
